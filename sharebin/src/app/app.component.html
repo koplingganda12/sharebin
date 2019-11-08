@@ -1,0 +1,39 @@
+<ion-app>
+  <ion-menu side="start" menuId="m1">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>ShareBin</ion-title>
+        </ion-toolbar>
+      </ion-header>
+  
+      <ion-content>
+        <ion-toolbar>
+          <ion-list>
+            <ion-menu-toggle auto-hide="true">
+              <ion-item [routerLink]="['/home']">
+                <ion-icon name="home"></ion-icon>
+                Home
+              </ion-item>
+              <ion-item [routerLink]="['/search']">
+                <ion-icon name="search"></ion-icon>
+                Search
+              </ion-item>
+              <ion-item [routerLink]="['/account']">
+                <ion-icon name="person"></ion-icon>
+                Account
+              </ion-item>
+              <ion-item>
+                <ion-icon name="create"></ion-icon>
+                Edit Profile
+              </ion-item>
+              <ion-item>
+                <ion-icon name="log-out"></ion-icon>
+                Logout
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-toolbar>
+      </ion-content>
+    </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

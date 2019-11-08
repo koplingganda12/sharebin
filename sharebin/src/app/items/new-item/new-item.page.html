@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Item Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Name" [(ngModel)]="item.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Address" [(ngModel)]="item.address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Description" [(ngModel)]="item.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Image" [(ngModel)]="item.imageUrl"></ion-input>
+    </ion-item>
+    <ion-button class="primary">Upload an Image</ion-button>
+  </ion-list>
+
+  <ion-button expand="block" (click)="saveItem()">Save</ion-button>
+
+</ion-content>

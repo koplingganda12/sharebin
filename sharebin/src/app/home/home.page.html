@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      ShareBin
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ng-container *ngIf="!items || items.length == 0">
+          <ion-card>
+            <ion-card-header>No Data</ion-card-header>
+            <ion-card-content>Start posting your items now!</ion-card-content>
+          </ion-card>
+        </ng-container>
+
+        <ion-list *ngFor="let i of items">
+          <ion-card>
+            <ion-card-header>
+              <ion-img [src]="i.imageUrl"></ion-img>
+            </ion-card-header>
+            <ion-card-title class="ion-padding">{{ i.name }}</ion-card-title>
+            <ion-card-content>
+              {{ i.description }}
+            </ion-card-content>
+            <ion-card-subtitle class="ion-padding">
+              <ion-icon name="pin"></ion-icon>
+              {{ i.address }}
+            </ion-card-subtitle>
+
+            <ion-card-title class="ion-padding">
+              <ion-button color="primary" [routerLink]="['/new-item', i.id]">
+                <ion-icon name="create"></ion-icon>
+              </ion-button>
+              <ion-button color="danger" (click)="remove(i)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+            </ion-card-title>
+          </ion-card>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/new-item" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
