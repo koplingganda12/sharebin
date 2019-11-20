@@ -16,7 +16,8 @@ export class NewItemPage implements OnInit {
     address: '',
     description: '',
     imageUrl: '',
-    userId: ''
+    userId: '',
+    hashtag: ''
   };
 
   itemId = null;

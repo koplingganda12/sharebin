@@ -10,6 +10,7 @@ export interface Item {
   description: string;
   imageUrl: string;
   userId: string;
+  hashtag: string;
 }
 
 @Injectable({
