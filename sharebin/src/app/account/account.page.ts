@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeService, Item } from '../home/home.service';
 
 @Component({
   selector: 'app-account',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./account.page.scss'],
 })
 export class AccountPage implements OnInit {
+  items: Item[];
 
-  constructor() { }
+  constructor(private homeService: HomeService) { }
 
   ngOnInit() {
+    this.homeService.getItems().subscribe(res => {
+      this.items = res;
+    });
   }
 
 }

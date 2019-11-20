@@ -3,6 +3,7 @@ import { Item, HomeService } from './../../home/home.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingController, NavController } from '@ionic/angular';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-new-item',
@@ -16,7 +17,7 @@ export class NewItemPage implements OnInit {
     address: '',
     description: '',
     imageUrl: '',
-    userId: '',
+    userId: this.authSvc.getUser(),
     hashtag: ''
   };
 
@@ -27,6 +28,7 @@ export class NewItemPage implements OnInit {
     private route: ActivatedRoute,
     private loadingController: LoadingController,
     private navController: NavController,
+    private authSvc: AuthService
   ) { }
 
   ngOnInit() {

@@ -18,12 +18,17 @@ interface AuthResponseData {
 export class AuthService {
   isAuthenticated = false;
   userId: string;
+  loggedIn: string;
 
   constructor(private http: HttpClient) { }
 
   setUser(userId: string) {
     this.userId = userId;
     this.isAuthenticated = true;
+  }
+
+  getUser() {
+    return this.userId;
   }
 
   signup(email: string, password: string) {

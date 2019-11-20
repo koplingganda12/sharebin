@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { item } from './home.model';
 import { Item, HomeService } from './home.service';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +11,18 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage {
   items: Item[];
+  userId: string;
 
   constructor(private homeService: HomeService,
-    private alertController: AlertController) { }
+    private alertController: AlertController,
+    private authSvc: AuthService) { }
 
   ngOnInit() {
     this.homeService.getItems().subscribe(res => {
       this.items = res;
     });
+    this.userId = this.authSvc.getUser();
+    console.log(this.userId);
   }
 
   remove(item) {

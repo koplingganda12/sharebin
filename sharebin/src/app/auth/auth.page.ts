@@ -22,6 +22,8 @@ export class AuthPage implements OnInit {
       resp => {
         if (resp.idToken) {
           console.log(resp);
+          this.authSvc.setUser(resp.localId);
+          console.log("User ID: ", resp.localId);
           this.router.navigateByUrl('/home');
         } else {
           console.log('Login failed!');
