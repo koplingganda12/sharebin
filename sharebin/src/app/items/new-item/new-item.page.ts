@@ -15,7 +15,8 @@ export class NewItemPage implements OnInit {
     name: '',
     address: '',
     description: '',
-    imageUrl: ''
+    imageUrl: '',
+    userId: ''
   };
 
   itemId = null;
@@ -29,7 +30,7 @@ export class NewItemPage implements OnInit {
 
   ngOnInit() {
     this.itemId = this.route.snapshot.params['id'];
-    if(this.itemId) {
+    if (this.itemId) {
       this.loadItem();
     }
   }
@@ -52,7 +53,7 @@ export class NewItemPage implements OnInit {
     });
     await loading.present();
 
-    if(this.itemId) {
+    if (this.itemId) {
       this.homeService.updateItem(this.item, this.itemId).then(() => {
         loading.dismiss();
         this.navController.navigateBack('home');

@@ -9,6 +9,7 @@ export interface Item {
   address: string;
   description: string;
   imageUrl: string;
+  userId: string;
 }
 
 @Injectable({
