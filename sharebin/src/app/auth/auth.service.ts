@@ -25,7 +25,6 @@ export class AuthService {
   setUser(userId: string) {
     this.userId = userId;
     this.isAuthenticated = true;
-    console.log("wawo1");
   }
 
   unsetUser() {
@@ -34,7 +33,6 @@ export class AuthService {
   }
 
   getUser() {
-    console.log("wawo2");
     return this.userId;
   }
 

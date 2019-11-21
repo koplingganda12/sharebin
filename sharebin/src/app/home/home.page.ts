@@ -28,9 +28,7 @@ export class HomePage {
     this.homeService.getItems().subscribe(res => {
       this.items = res;
     });
-    console.log("wawo3");
     this.userId = this.authSvc.getUser();
-    console.log("wawo4");
     console.log(this.userId);
   }
 
