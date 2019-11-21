@@ -9,7 +9,7 @@ import { AuthService } from '../auth/auth.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
   items: Item[];
   userId: string;
 
@@ -25,6 +25,7 @@ export class HomePage {
   // }
 
   ngOnInit() {
+    console.log("test");
     this.homeService.getItems().subscribe(res => {
       this.items = res;
     });
