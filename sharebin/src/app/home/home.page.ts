@@ -17,11 +17,20 @@ export class HomePage {
     private alertController: AlertController,
     private authSvc: AuthService) { }
 
+  // ionViewWillEnter() {
+  //   this.homeService.getItems().subscribe(res => {
+  //     this.items = res;
+  //   });
+  //   this.userId = this.authSvc.getUser();
+  // }
+
   ngOnInit() {
     this.homeService.getItems().subscribe(res => {
       this.items = res;
     });
+    console.log("wawo3");
     this.userId = this.authSvc.getUser();
+    console.log("wawo4");
     console.log(this.userId);
   }
 

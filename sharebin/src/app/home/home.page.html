@@ -34,14 +34,16 @@
               {{ i.address }}
             </ion-card-subtitle>
 
-            <ion-card-title class="ion-padding">
-              <ion-button color="primary" [routerLink]="['/new-item', i.id]">
-                <ion-icon name="create"></ion-icon>
-              </ion-button>
-              <ion-button color="danger" (click)="presentAlert(i)">
-                <ion-icon name="trash"></ion-icon>
-              </ion-button>
-            </ion-card-title>
+            <div *ngIf="i.userId == userId">
+              <ion-card-title class="ion-padding">
+                <ion-button color="primary" [routerLink]="['/new-item', i.id]">
+                  <ion-icon name="create"></ion-icon>
+                </ion-button>
+                <ion-button color="danger" (click)="presentAlert(i)">
+                  <ion-icon name="trash"></ion-icon>
+                </ion-button>
+              </ion-card-title>
+            </div>
           </ion-card>
         </ion-list>
       </ion-col>

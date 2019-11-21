@@ -11,10 +11,12 @@ import { SignUpComponent } from './sign-up/sign-up.component';
   styleUrls: ['./auth.page.scss'],
 })
 export class AuthPage implements OnInit {
+  userId: string;
 
   constructor(private modalCtrl: ModalController, private authSvc: AuthService, private router: Router) { }
 
   ngOnInit() {
+    this.userId = this.authSvc.getUser();
   }
 
   onLogin(f: NgForm) {
