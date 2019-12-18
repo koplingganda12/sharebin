@@ -1,3 +1,4 @@
+import { AccountService } from './../account/account.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
@@ -13,7 +14,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 export class AuthPage implements OnInit {
   userId: string;
 
-  constructor(private modalCtrl: ModalController, private authSvc: AuthService, private router: Router) { }
+  constructor(private modalCtrl: ModalController, private authSvc: AuthService, private router: Router,
+    private accountService: AccountService) { }
 
   ngOnInit() {
     this.userId = this.authSvc.getUser();
@@ -35,6 +37,7 @@ export class AuthPage implements OnInit {
         console.log(errosResp);
       }
     );
+    this.authSvc.setUserEmail(f.value.email);
     //this.router.navigateByUrl('/home');
   }
 

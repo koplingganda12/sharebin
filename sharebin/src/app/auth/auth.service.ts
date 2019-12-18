@@ -15,14 +15,22 @@ interface AuthResponseData {
   registered?: boolean;
 }
 
+//test class user
+export interface User {
+  email: string;
+  name: string;
+  address: string;
+  phoneNumber: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   isAuthenticated = false;
   userId: string;
+  email: string;
   loggedIn: string;
-
 
   constructor(private http: HttpClient) {
   }
@@ -68,5 +76,13 @@ export class AuthService {
     //firebase logout API here
     this.isAuthenticated = false;
     console.log(this.isAuthenticated);
+  }
+
+  setUserEmail(email: string){
+    this.email = email;
+  }
+
+  getUserEmail(){
+    return this.email;
   }
 }

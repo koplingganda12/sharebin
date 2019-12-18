@@ -29,8 +29,10 @@
     <!-- <ion-item>
       <ion-input required type="text" placeholder="Image" [(ngModel)]="item.imageUrl"></ion-input>
     </ion-item> -->
-    
-    <img [src]="photo">
+
+    <div *ngIf="photo">
+      <img [src]="photo">
+    </div>
 
     <ion-fab vertical="bottom" horizontal="center" slot="fixed">
       <ion-fab-button (click)="takePicture()">
