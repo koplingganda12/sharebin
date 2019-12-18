@@ -26,6 +26,10 @@ export class HomePage implements OnInit {
   // }
 
   ngOnInit() {
+    
+  }
+
+  ionViewWillEnter(){
     console.log("test");
     this.homeService.getItems().subscribe(res => {
       this.items = res;

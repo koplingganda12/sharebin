@@ -8,23 +8,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-toolbar>
-    <ion-card>
+<ion-content padding>
 
-      <ion-card-header>
-        <ion-card-subtitle>test</ion-card-subtitle>
-      </ion-card-header>
-    </ion-card>
-  </ion-toolbar>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Name" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Address" [(ngModel)]="user.address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Phone Number" [(ngModel)]="user.phoneNumber"></ion-input>
+    </ion-item>
+  </ion-list>
 
-  <ion-toolbar>
-    <ion-grid>
-      <ion-row>
-        <ion-col size='4' *ngFor="let i of items">
-          <ion-img [src]="i.imageUrl"></ion-img>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
+  <ion-button expand="block" (click)="saveUser()">Save</ion-button>
+
 </ion-content>

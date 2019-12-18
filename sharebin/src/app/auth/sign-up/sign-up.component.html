@@ -7,6 +7,42 @@
   <form #f="ngForm" (ngSubmit)="onSignUp(f)">
     <ion-list>
 
+      <!-- Name -->
+      <ion-item>
+        <ion-label position="fixed">Name</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="name"
+          type="text"
+          placeholder="Your name here"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Address -->
+      <ion-item>
+        <ion-label position="fixed">Address</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="address"
+          type="text"
+          placeholder="Your address here"
+        ></ion-input>
+      </ion-item>
+
+      <!-- phoneNumber -->
+      <ion-item>
+        <ion-label position="fixed">Phone Number</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="phoneNumber"
+          type="text"
+          placeholder="Your phone number here"
+        ></ion-input>
+      </ion-item>
+
       <!-- Email -->
       <ion-item>
         <ion-label position="fixed">Email</ion-label>
