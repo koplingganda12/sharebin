@@ -40,5 +40,10 @@ export class AccountService {
   getUser(email) {
     return this.usersCollection.doc<User>(email).valueChanges();
   }
+
+  setImage(downloadURL) {
+    var localStorageUid = localStorage.getItem('uid');
+    firebase.database().ref('/users/' + localStorageUid).update( {image: downloadURL} );
+  }
   
 }
