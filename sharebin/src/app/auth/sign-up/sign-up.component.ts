@@ -16,7 +16,8 @@ export class SignUpComponent implements OnInit {
     email: '',
     name: '',
     address: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    avatarUrl: ''
   };
 
   constructor(

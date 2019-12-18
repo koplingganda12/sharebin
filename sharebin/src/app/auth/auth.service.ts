@@ -21,6 +21,7 @@ export interface User {
   name: string;
   address: string;
   phoneNumber: string;
+  avatarUrl: string;
 }
 
 @Injectable({
