@@ -9,20 +9,17 @@
 
 <ion-content>
   <ion-toolbar>
-    <ion-searchbar placeholder="Search by Hashtag..."></ion-searchbar>
+    <ion-searchbar (ionInput)='search($event)' placeholder="Search by Hashtag..."></ion-searchbar>
 
     <ion-list>
-      <ion-item>
-        <b>#</b>
-        kardusbekas
-      </ion-item>
-      <ion-item>
-        <b>#</b>
-        barangbekas
-      </ion-item>
-      <ion-item>
-        <b>#</b>
-        botolbekas
+      <ion-item *ngFor="let hshtg of resultArray">
+
+        <ion-label>
+          <ion-note style="font-weight: bold;">
+              # {{ hshtg.hashtag }}
+          </ion-note>
+        </ion-label>
+
       </ion-item>
     </ion-list>
   </ion-toolbar>

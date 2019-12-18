@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-// import { item } from './home.model';
+import { item } from './home.model';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
+import * as firebase from 'firebase';
 
 export interface Item {
   name: string;
@@ -11,6 +12,7 @@ export interface Item {
   imageUrl: string;
   userId: string;
   hashtag: string;
+  phoneNumber: string;
 }
 
 @Injectable({
@@ -74,4 +76,19 @@ export class HomeService {
   removeItem(id) {
     return this.itemsCollection.doc(id).delete();
   }
+
+  setImage(downloadURL) {
+    var localStorageUid = localStorage.getItem('uid');
+    firebase.database().ref('/users/' + localStorageUid).update( {image: downloadURL} );
+  }
+
+  // searchResult(event) {
+  //   let srcKey:string = event.target.value;
+  //   console.log(srcKey + " service");
+  // }
+
+  // getSearchKey(){
+  //   return this.searchResult;
+  // }
+
 }
