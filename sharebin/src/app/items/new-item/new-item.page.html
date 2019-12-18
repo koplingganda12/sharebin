@@ -24,9 +24,20 @@
       <ion-input required type="text" placeholder="Hashtag" [(ngModel)]="item.hashtag"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input required type="text" placeholder="Image" [(ngModel)]="item.imageUrl"></ion-input>
+      <ion-input required type="text" placeholder="Phone Number" [(ngModel)]="item.phoneNumber"></ion-input>
     </ion-item>
-    <ion-button class="primary">Upload an Image</ion-button>
+    <!-- <ion-item>
+      <ion-input required type="text" placeholder="Image" [(ngModel)]="item.imageUrl"></ion-input>
+    </ion-item> -->
+    
+    <img [src]="photo">
+
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
   </ion-list>
 
   <ion-button expand="block" (click)="saveItem()">Save</ion-button>

@@ -1,5 +1,7 @@
 {
   "name": "sharebin",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

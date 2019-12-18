@@ -10,6 +10,11 @@
 </ion-header>
 
 <ion-content>
+
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search by Hashtag..."></ion-searchbar>
+  </ion-toolbar>
+
   <ion-grid>
     <ion-row>
       <ion-col>
@@ -33,6 +38,10 @@
               <ion-icon name="pin"></ion-icon>
               {{ i.address }}
             </ion-card-subtitle>
+            <ion-card-content>
+              <ion-icon name="call"></ion-icon>
+              {{ i.phoneNumber }}
+            </ion-card-content>
 
             <div *ngIf="i.userId == userId">
               <ion-card-title class="ion-padding">
@@ -46,6 +55,7 @@
             </div>
           </ion-card>
         </ion-list>
+
       </ion-col>
     </ion-row>
   </ion-grid>

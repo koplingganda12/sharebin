@@ -12,6 +12,7 @@ import { AuthService } from '../auth/auth.service';
 export class HomePage implements OnInit {
   items: Item[];
   userId: string;
+  srcKey: string;
 
   constructor(private homeService: HomeService,
     private alertController: AlertController,
@@ -32,6 +33,11 @@ export class HomePage implements OnInit {
     this.userId = this.authSvc.getUser();
     console.log(this.userId);
   }
+
+  // srcEvent() {
+  //   this.homeService.getSearchKey();
+  //   console.log("HOMEPAGE : " + this.homeService.getSearchKey());
+  // }
 
   remove(item) {
     this.homeService.removeItem(item.id);
