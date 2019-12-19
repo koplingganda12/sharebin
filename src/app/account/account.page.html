@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Edit Account</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list lines="full">
+
+    <ion-item>
+      <img class="center" [src]="user.avatarUrl">
+      <ion-label position="floating">Name</ion-label>
+      <ion-input text-center required type="text" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input text-center required type="text" [(ngModel)]="user.address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input text-center required type="text" [(ngModel)]="user.phoneNumber"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <ion-button expand="block" (click)="takePicture()">Take Picture Profile</ion-button>
+  <ion-button expand="block" (click)="saveUser()">Save</ion-button>
+
+</ion-content>

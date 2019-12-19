@@ -1,0 +1,30 @@
+
+.ion-padding{
+  display: flex;
+  height: 100%;
+
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textMiddle {
+    left: 0;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    top: auto;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5% 0 5%;
+}
+
+.formText{
+  display: flex;
+  flex-direction: column;
+  margin: 10% 2% 0% 2%;
+}

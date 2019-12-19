@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Add New Item</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="sellForm">
+
+  <div *ngIf="photo">
+    <img [src]="photo" alt="Insert Photo Here">
+  </div>
+
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="Name" [(ngModel)]="item.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Address" [(ngModel)]="item.address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Description" [(ngModel)]="item.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Hashtag" [(ngModel)]="item.hashtag"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="Phone Number" [(ngModel)]="item.phoneNumber"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-input required type="text" placeholder="Image" [(ngModel)]="item.imageUrl"></ion-input>
+    </ion-item> -->
+
+    
+
+    
+  </ion-list>
+  
+  <ion-button expand="block" (click)="saveItem()">Save</ion-button>
+  
+</ion-content>
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+      <ion-fab-button (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>

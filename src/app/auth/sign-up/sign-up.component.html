@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form #f="ngForm" (ngSubmit)="onSignUp(f)">
+    <ion-list>
+
+      <!-- Name -->
+      <ion-item>
+        <ion-label position="fixed">Name</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="name"
+          type="text"
+          placeholder="Your name here"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Address -->
+      <ion-item>
+        <ion-label position="fixed">Address</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="address"
+          type="text"
+          placeholder="Your address here"
+        ></ion-input>
+      </ion-item>
+
+      <!-- phoneNumber -->
+      <ion-item>
+        <ion-label position="fixed">Phone Number</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="phoneNumber"
+          type="text"
+          placeholder="Your phone number here"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Email -->
+      <ion-item>
+        <ion-label position="fixed">Email</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="email"
+          type="email"
+          placeholder="Your email here"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Password -->
+      <ion-item>
+        <ion-label position="fixed">Password</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="pwd"
+          type="password"
+          minlength="6"
+          placeholder="******"
+        ></ion-input>
+      </ion-item>
+
+      <!-- Confirm Password -->
+      <ion-item>
+        <ion-label position="fixed">Confirm Password</ion-label>
+        <ion-input
+          required
+          ngModel
+          name="confirmPwd"
+          type="password"
+          minlength="6"
+          placeholder="******"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" [disabled]="!f.valid" type="submit">Sign Up</ion-button>
+    <ion-button expand="block" fill='outline' color='danger' (click)='onCancel()'>Cancel</ion-button>
+  </form>
+</ion-content>

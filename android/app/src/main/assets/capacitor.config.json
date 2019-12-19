@@ -1,0 +1,8 @@
+{
+  "appId": "com.example.sharebin",
+  "appName": "ShareBin",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
