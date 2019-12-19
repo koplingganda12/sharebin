@@ -1,23 +1,25 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar >
     <ion-title text-center>ShareBin</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class='ion-padding'>
-  <h1 class="ion-text-center ion-padding-bottom">Login</h1>
-  <form #f="ngForm" (ngSubmit)="onLogin(f)">
+  <div class="textMiddle">
+    <img src="assets/icon/rename.png" alt="ShareBin" class="center">
+  
+  <form class="formText" #f="ngForm" (ngSubmit)="onLogin(f)" autocomplete="off" >
     <ion-list>
       <ion-item>
-        <ion-label position="fixed">Email</ion-label>
-        <ion-input required ngModel name="email" type="email" placeholder="Your email here"></ion-input>
+        <ion-input class="ion-text-center" required ngModel clear-input name="email" type="email" placeholder="Email"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label position="fixed">Password</ion-label>
-        <ion-input required ngModel name="pwd" type="password" minlength='6' placeholder="******"></ion-input>
+        <ion-input class="ion-text-center" required ngModel clear-input name="pwd" type="password" minlength='6' placeholder="Password"></ion-input>
       </ion-item>
     </ion-list>
-    <ion-button expand="block" [disabled]="!f.valid" type="submit">Login</ion-button>
-    <ion-button expand="block" fill='clear' (click)='presentSignUpModal()'>Sign Up</ion-button>
+    <ion-button expand="full" [disabled]="!f.valid" type="submit" (click)="onClick()">Login</ion-button>
+    <ion-button expand="full" fill='clear' (click)='presentSignUpModal()'>Sign Up</ion-button>
   </form>
+</div>
 </ion-content>
+

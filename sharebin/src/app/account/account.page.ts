@@ -3,6 +3,7 @@ import { AuthService, User} from 'src/app/auth/auth.service';
 import { AccountService} from './account.service';
 import { Component, OnInit } from '@angular/core';
 import { HomeService, Item } from '../home/home.service';
+import { ToastController } from '@ionic/angular';
 import * as firebase from 'firebase';
 import { AlertController, LoadingController, NavController } from '@ionic/angular';
 import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
@@ -35,11 +36,21 @@ export class AccountPage implements OnInit {
     private accountService: AccountService,
     private loadingController: LoadingController,
     private navController: NavController,
+    private toastController : ToastController,
     private sanitizer: DomSanitizer
     ) { }
 
   ngOnInit() {
     this.loadUser();
+  }
+
+  async successToast() {
+    const toast = await this.toastController.create({
+      message: 'Success',
+      duration: 3800,
+      showCloseButton: true
+    });
+    toast.present();
   }
 
   async loadUser() {
@@ -106,5 +117,7 @@ export class AccountPage implements OnInit {
       loading.dismiss();
       this.navController.navigateBack('home');
     })
+
+    this.successToast();
   }
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingController, NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/auth/auth.service';
+import { ToastController } from '@ionic/angular';
 import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
@@ -37,6 +38,7 @@ export class NewItemPage implements OnInit {
     private loadingController: LoadingController,
     private navController: NavController,
     private authSvc: AuthService,
+    private toastController : ToastController,
     private sanitizer: DomSanitizer
   ) {
     // this.isUploading = false;
@@ -64,6 +66,17 @@ export class NewItemPage implements OnInit {
       this.item = res;
       this.photo = this.item.imageUrl;
     });
+
+   
+  }
+
+  async successToast() {
+    const toast = await this.toastController.create({
+      message: 'Success Adding Item',
+      duration: 5000,
+      showCloseButton: true
+    });
+    toast.present();
   }
 
   async takePicture() {
@@ -104,12 +117,16 @@ export class NewItemPage implements OnInit {
     const loading = await this.loadingController.create({
       message: 'Saving item...'
     });
+    
     await loading.present();
+    
 
     if (this.itemId) {
       this.homeService.updateItem(this.item, this.itemId).then(() => {
         loading.dismiss();
         this.navController.navigateBack('home');
+          
+        
       })
     } else {
       this.homeService.addItem(this.item).then(() => {
@@ -117,6 +134,9 @@ export class NewItemPage implements OnInit {
         this.navController.navigateBack('home');
       });
     }
+
+
   }
+
 
 }

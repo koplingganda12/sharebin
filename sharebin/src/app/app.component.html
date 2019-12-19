@@ -9,10 +9,11 @@
     <ion-content>
       <ion-toolbar>
         <ion-list>
-          <ion-menu-toggle auto-hide="true">
+          <ion-menu-toggle auto-hide="true" class="sideBar">
+
             <ion-item [routerLink]="['/home']">
               <ion-icon name="home"></ion-icon>
-              Home
+                Home
             </ion-item>
 
             <!-- <ion-item [routerLink]="['/search']">
@@ -22,7 +23,7 @@
 
             <ion-item [routerLink]="['/account']">
               <ion-icon name="person"></ion-icon>
-              Account
+                Account
             </ion-item>
 
             <!-- <ion-item>
@@ -32,7 +33,7 @@
               
             <ion-item (click)="onLogout()">
               <ion-icon name="log-out"></ion-icon>
-              Logout
+                Logout
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

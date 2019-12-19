@@ -4,11 +4,15 @@
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
 
-    <ion-title>Item Details</ion-title>
+    <ion-title>Add New Item</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="sellForm">
+
+  <div *ngIf="photo">
+    <img [src]="photo" alt="Insert Photo Here">
+  </div>
 
   <ion-list lines="full">
     <ion-item>
@@ -30,18 +34,16 @@
       <ion-input required type="text" placeholder="Image" [(ngModel)]="item.imageUrl"></ion-input>
     </ion-item> -->
 
-    <div *ngIf="photo">
-      <img [src]="photo">
-    </div>
+    
 
-    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    
+  </ion-list>
+  
+  <ion-button expand="block" (click)="saveItem()">Save</ion-button>
+  
+</ion-content>
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
       <ion-fab-button (click)="takePicture()">
         <ion-icon name="camera"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-    
-  </ion-list>
-
-  <ion-button expand="block" (click)="saveItem()">Save</ion-button>
-
-</ion-content>
