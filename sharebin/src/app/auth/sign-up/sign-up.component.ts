@@ -2,6 +2,7 @@ import { AccountService } from './../../account/account.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 import { AuthService, User } from '../auth.service';
 import * as firebase from 'firebase';
 
@@ -23,11 +24,21 @@ export class SignUpComponent implements OnInit {
   constructor(
     private modalCtrl: ModalController,
     private authSvc: AuthService,
-    private accService: AccountService
+    private accService: AccountService,
+    private toastController: ToastController
     ) { }
 
   ngOnInit() {}
 
+  async successToast() {
+    const toast = await this.toastController.create({
+      message: 'Informasi Tersimpan',
+      duration: 3800,
+      showCloseButton: true
+    });
+    toast.present();
+  }
+  
   onSignUp(f: NgForm) {
     console.log(f.value);
     this.authSvc.signup(f.value.email, f.value.pwd).subscribe(resp => {
@@ -39,6 +50,7 @@ export class SignUpComponent implements OnInit {
       this.accService.addUser(this.user, this.user.email);
       this.modalCtrl.dismiss();
     });
+    this.successToast();
   }
 
   onCancel() {

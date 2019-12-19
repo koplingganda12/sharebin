@@ -33,8 +33,11 @@ export class AuthService {
   email: string;
   loggedIn: string;
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient) {
   }
+
+
 
   setUser(userId: string) {
     this.userId = userId;

@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header translucent>
+  <ion-toolbar color="primary">
     <ion-title class="ion-text-center">
       ShareBin
     </ion-title>
@@ -85,11 +85,11 @@
             <ion-card-header>
               <ion-img [src]="i.imageUrl"></ion-img>
             </ion-card-header>
-            <ion-card-title class="ion-padding">{{ i.name }}</ion-card-title>
+            <ion-card-title class="ion-padding titleCard">{{ i.name }}</ion-card-title>
             <ion-card-content>
               {{ i.description }}
             </ion-card-content>
-            <ion-card-subtitle class="ion-padding">
+            <ion-card-subtitle class="ion-padding subCard">
               <ion-icon name="pin"></ion-icon>
               {{ i.address }}
             </ion-card-subtitle>
