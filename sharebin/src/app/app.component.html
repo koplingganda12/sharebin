@@ -1,7 +1,7 @@
 <ion-app>
   <ion-menu side="start" menuId="m1">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="primary">
         <ion-title>ShareBin</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -13,7 +13,7 @@
 
             <ion-item [routerLink]="['/home']">
               <ion-icon name="home"></ion-icon>
-                Home
+              Home
             </ion-item>
 
             <!-- <ion-item [routerLink]="['/search']">
@@ -23,17 +23,17 @@
 
             <ion-item [routerLink]="['/account']">
               <ion-icon name="person"></ion-icon>
-                Account
+              Account
             </ion-item>
 
             <!-- <ion-item>
                 <ion-icon name="create"></ion-icon>
                 Edit Profile
               </ion-item> -->
-              
+
             <ion-item (click)="onLogout()">
               <ion-icon name="log-out"></ion-icon>
-                Logout
+              Logout
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
