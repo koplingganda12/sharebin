@@ -37,16 +37,16 @@ export class AuthService {
     private http: HttpClient) {
   }
 
-
-
   setUser(userId: string) {
     this.userId = userId;
     this.isAuthenticated = true;
   }
 
   unsetUser() {
-    // this.userId = null;
-    // this.isAuthenticated = false;
+    this.isAuthenticated = false;
+    console.log(this.isAuthenticated);
+    this.userId = null;
+    console.log(this.userId);
   }
 
   getUser() {
@@ -82,11 +82,11 @@ export class AuthService {
     console.log(this.isAuthenticated);
   }
 
-  setUserEmail(email: string){
+  setUserEmail(email: string) {
     this.email = email;
   }
 
-  getUserEmail(){
+  getUserEmail() {
     return this.email;
   }
 }
